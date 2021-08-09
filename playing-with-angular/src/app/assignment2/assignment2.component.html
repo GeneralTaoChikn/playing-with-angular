@@ -1,0 +1,34 @@
+<p>assignment2 works!</p>
+<p>Server Id is {{serverId}}</p>
+<p>Server is {{serverStatus}}</p>
+<p>Function returns :  {{getServerStatus()}}</p>
+<p>{{serverCreationStatus}}</p>
+<button 
+ class="btn btn-primary"
+ [disabled]="!allowSave"
+ (click)="onCreateServer()">Save</button>
+ <br>
+
+ <label>Server Name</label><br>
+<!-- Two Way Bind -->
+ <input
+ type="text"
+ class = "form-control"
+ [(ngModel)] = "serverName"
+ (input) = "onUpdaterServerName($event)"><br>
+ <!-- OneWay Bind -->
+ <input
+ type="text"
+ class = "form-control"
+ (input) = "onUpdaterServerName($event)">
+ <p>{{serverName}}</p>
+ <label>Username</label><br>
+ <input
+ type="text"
+ class = "form-control"
+ [(ngModel)] = "userName"><br>
+ <p>{{userName}}</p>
+ <button
+ (click)="clearName()"
+ [disabled]="userName === ''">reset
+ </button>
