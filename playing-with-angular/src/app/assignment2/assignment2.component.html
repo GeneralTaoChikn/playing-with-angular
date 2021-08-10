@@ -3,6 +3,7 @@
 <p>Server is {{serverStatus}}</p>
 <p>Function returns :  {{getServerStatus()}}</p>
 <p>{{serverCreationStatus}}</p>
+
 <button 
  class="btn btn-primary"
  [disabled]="!allowSave"
@@ -22,6 +23,12 @@
  class = "form-control"
  (input) = "onUpdaterServerName($event)">
  <p>{{serverName}}</p>
+<!-- IF Else -->
+ <p *ngIf="serverCreated"; else noServer>The blah blah name is {{serverName}}</p>
+ <ng-template #noServer>
+     <p>No server Created</p>
+ </ng-template>
+ 
  <label>Username</label><br>
  <input
  type="text"

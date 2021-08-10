@@ -13,6 +13,7 @@ export class Assignment2Component implements OnInit {
   serverCreationStatus = 'No server was created!';
   serverName = '';
   userName = '';
+  serverCreated = false;
 
 
   getServerStatus() {
@@ -30,6 +31,7 @@ export class Assignment2Component implements OnInit {
 
   onCreateServer() {
     this.serverCreationStatus = 'Server was created';
+    this.serverCreated = true;
   }
   onUpdaterServerName(event: any) {
     this.serverName = (<HTMLInputElement>event.target).value;
